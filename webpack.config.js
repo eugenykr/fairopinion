@@ -10,8 +10,7 @@ Encore
 
     // will create web/build/app.js and web/build/app.css
     .addEntry('app', './app/assets/app.js')
-
-    .enableVersioning()
+    //.enableVersioning()
 
     // allow sass/scss files to be processed
     .enableSassLoader(function(sassOptions) {}, {
