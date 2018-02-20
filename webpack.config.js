@@ -9,7 +9,7 @@ Encore
     .setPublicPath('/build')
 
     // will create web/build/app.js and web/build/app.css
-    .addEntry('app', './app/assets/app.js')
+    .addEntry('app', './app/assets/js/main.js')
     //.enableVersioning()
 
     // allow sass/scss files to be processed
