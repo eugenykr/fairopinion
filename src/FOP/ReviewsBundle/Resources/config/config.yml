@@ -1,0 +1,3 @@
+parameters:
+    # contact email address
+    fop_reviews.emails.contact_email: eugenykr@gmail.com

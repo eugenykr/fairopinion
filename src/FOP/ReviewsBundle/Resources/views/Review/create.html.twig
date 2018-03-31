@@ -1,0 +1,8 @@
+{% extends '@FOPReviews/layout.html.twig' %}
+
+{% block title %}Добавить отзыв{% endblock%}
+
+{% block body %}
+    <h1>Добавить отзыв "{{ review.organization.title }}"</h1>
+    {% include '@FOPReview/Review/form.html.twig' with { 'form': form } %}
+{% endblock %}

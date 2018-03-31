@@ -1,0 +1,6 @@
+{{ form_start(form, { 'action': path('FOPReviewsBundle_review_create' , { 'orgId' : review.organization.id }), 'method': 'POST', 'attr': {'class': 'FOP'} }) }}
+
+    {{ form_widget(form) }}
+<p>
+    <input type="submit" value="Отправить">
+</p>

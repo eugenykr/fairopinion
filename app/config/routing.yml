@@ -1,0 +1,4 @@
+fop_reviews:
+    resource: "@FOPReviewsBundle/Resources/config/routing.yml"
+    prefix:   /
+

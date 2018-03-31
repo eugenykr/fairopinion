@@ -1,0 +1,38 @@
+FOPReviewsBundle_homepage:
+    path:     /
+    defaults: { _controller: "FOPReviewsBundle:Page:index" }
+    requirements:
+         methods:  GET
+
+FOPReviewsBundle_about:
+    path:   /about
+    defaults: { _controller: "FOPReviewsBundle:Page:about" }
+    requirements:
+         methods:  GET
+
+FOPReviewsBundle_contacts:
+    path:  /contacts
+    defaults: { _controller: "FOPReviewsBundle:Page:contacts" }
+    requirements:
+        methods:  GET|POST
+
+FOPReviewsBundle_organization_show:
+    path: /{id}
+    defaults: { _controller: "FOPReviewsBundle:Organization:show"}
+    requirements:
+        methods: GET
+        id: \d+
+
+FOPReviewsBundle_review_create:
+    path:  /review/{orgId}
+    defaults: { _controller: "FOPReviewsBundle:Review:create" }
+    requirements:
+        methods:  POST
+        organization_id: \d+
+
+FOPReviewsBundle_admin_show:
+    path:  /admin
+    defaults: { _controller: "FOPReviewsBundle:Admin:show" }
+    requirements:
+        methods:  POST
+        organization_id: \d+

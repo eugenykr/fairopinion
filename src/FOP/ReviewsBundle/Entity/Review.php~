@@ -1,0 +1,72 @@
+<?php
+
+namespace FOP\ReviewsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="FOP\ReviewsBundle\Entity\Repository\ReviewRepository")
+ * @ORM\Table(name="review")
+ * @ORM\HasLifecycleCallbacks
+ */
+class Review
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	protected $id;
+
+	/**
+	 * @ORM\Column(type="string")
+	 */
+	protected $user;
+
+	/**
+	 * @ORM\Column(type="text")
+	 */
+	protected $comment;
+
+	/**
+	 * @ORM\Column(type="boolean")
+	 */
+	protected $approved;
+
+	/**
+	 * @ORM\Column(type="smallint")
+	 */
+	protected $rate;
+
+	/**
+	 * @ORM\ManyToOne(targetEntity="Organization", inversedBy="reviews")
+	 * @ORM\JoinColumn(name="organization_id", referencedColumnName="id")
+	 */
+	protected $organization;
+
+	/**
+	 * @ORM\Column(type="datetime")
+	 */
+	protected $created;
+
+	/**
+	 * @ORM\Column(type="datetime")
+	 */
+	protected $updated;
+
+	public function __construct()
+	{
+		$this->setCreated(new \DateTime());
+		$this->setUpdated(new \DateTime());
+
+		$this->setApproved(true);
+	}
+
+	/**
+	 * @ORM\preUpdate
+	 */
+	public function setUpdatedValue()
+	{
+		$this->setUpdated(new \DateTime());
+	}
+}

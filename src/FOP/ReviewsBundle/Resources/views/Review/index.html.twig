@@ -1,0 +1,11 @@
+
+{% for review in reviews %}
+    <article class="review {{ cycle(['odd', 'even'], loop.index0) }}" id="review-{{ review.id }}">
+        <header>
+            <p><span class="highlight">{{ review.user }}</span> оставил отзыв <time datetime="{{ review.created|date('c') }}">{{ review.created|date('l, F j, Y') }}</time></p>
+        </header>
+        <p>{{ review.comment }}</p>
+    </article>
+{% else %}
+    <p>There are no comments for this post. Be the first to comment...</p>
+{% endfor %}

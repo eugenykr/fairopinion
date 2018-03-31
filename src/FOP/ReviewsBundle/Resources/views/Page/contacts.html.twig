@@ -1,0 +1,31 @@
+{% extends '@FOPReviews/layout.html.twig' %}
+
+
+{% block title %}Contact{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Contact symblog</h1>
+    </header>
+
+    {% for flashMessage in app.session.flashbag.get('reviews-notice') %}
+        <div class="reviews-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <p>Want to contact symblog?</p>
+
+    {{ form_start(form, { 'action': path('FOPReviewsBundle_contacts'), 'method': 'POST', 'attr': {'class': 'contact'} }) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.name) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.subject) }}
+    {{ form_row(form.body) }}
+
+    {{ form_rest(form) }}
+
+    <input type="submit" value="Submit" />
+
+{% endblock %}

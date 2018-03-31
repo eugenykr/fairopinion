@@ -1,0 +1,40 @@
+{% extends '@FOPReviews/layout.html.twig' %}
+
+{% block body %}
+    <div class="content-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    {% for organization in organizations %}
+                        <div class="review-item">
+                            <div class="review-item__top">
+                                <h2>{{ organization.title }}</h2>
+                                <div class="rating">
+                                    <p>Средняя оценка:</p>
+                                    <span id="rateYo"></span>
+                                </div>
+                            </div>
+                            <div class="review-item__content">
+                                <img src="{{ organization.image }}"/>
+                                <p>{{ organization.content(500) }}</p>
+                            </div>
+                            <div class="review-item__bottom">
+                                <p class="review-item__address">{{ organization.address }}</p>
+                                <a href="{{ path('FOPReviewsBundle_organization_show', { 'id': organization.id }) }}">Подробнее</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <h2>Новое</h2>
+                        <div class="item-new">
+                            <h3>Автосалон тест</h3>
+                        </div>
+                        <h2>Последние отзывы</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
