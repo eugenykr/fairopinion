@@ -30,9 +30,7 @@ FOPReviewsBundle_review_create:
         methods:  POST
         organization_id: \d+
 
-FOPReviewsBundle_admin_show:
-    path:  /admin
-    defaults: { _controller: "FOPReviewsBundle:Admin:show" }
-    requirements:
-        methods:  POST
-        organization_id: \d+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /admin

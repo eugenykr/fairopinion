@@ -63,6 +63,11 @@ class Review
 		$this->setApproved(true);
 	}
 
+	public function __toString()
+	{
+		return $this->getUser();
+	}
+
 	/**
 	 * Vaidations
 	 */

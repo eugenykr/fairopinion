@@ -18,6 +18,7 @@ class AppKernel extends Kernel
 	        new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOP\ReviewsBundle\FOPReviewsBundle(),
+	        new EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle()
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
